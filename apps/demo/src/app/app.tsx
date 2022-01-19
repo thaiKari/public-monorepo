@@ -1,10 +1,9 @@
-import styles from './app.module.css';
-import NxWelcome from './nx-welcome';
+import { PinkButton } from '@kari-nx/buttons';
 
 export function App() {
   return (
     <>
-      <NxWelcome title="demo" />
+      <PinkButton/>
       <div />
     </>
   );
