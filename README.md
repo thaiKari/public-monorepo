@@ -18,7 +18,7 @@ Libraries are shareable across libraries and applications. They can be imported 
 
 The __--publishable__ tag makes it possible to run `nx build my-lib`. One particularity when generating a library with --publishable is that it requires you to also provide an __--importPath__. Your import path is the actual scope of your distributable package (e.g.: @myorg/mylib) - which needs to be a valid npm package name. See [Publishable and Buildable Nx Libraries](https://nx.dev/structure/buildable-and-publishable-libraries).
 
-Publishing of affected libraries is automated in main.yml. This is done with a custom nx command ([Running Custom Commands](https://nx.dev/executors/run-commands-builder))
+Publishing of affected libraries and incrementing the package version is automated in main.yml. This is done with a custom nx command ([Running Custom Commands](https://nx.dev/executors/run-commands-builder))
 
 This command must be created per library. In __libs/my-lib/project.json__ add this custom command:
 
@@ -27,8 +27,11 @@ This command must be created per library. In __libs/my-lib/project.json__ add th
       "executor": "@nrwl/workspace:run-commands",
       "outputs": ["libs/branding/my-lib"],
       "options": {
-        "command": "npm publish  --access public",
-        "cwd": "libs/my-lib"
+        "commands":[
+           "npm --no-git-tag-version version patch",
+           "npm publish  --access public"
+          ],
+        "cwd": "libs/buttons"
       }
     }
 ```
