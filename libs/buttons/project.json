@@ -41,11 +41,11 @@
     },
     "publish": {
       "executor": "@nrwl/workspace:run-commands",
-      "outputs": ["libs/branding/buttons"],
+      "outputs": ["libs/buttons"],
       "options": {
         "commands":[
-           "npm --no-git-tag-version version patch",
-           "npm publish  --access public"
+           "npm version patch",
+           "npm publish --access public"
           ],
         "cwd": "libs/buttons"
       }

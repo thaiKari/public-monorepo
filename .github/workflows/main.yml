@@ -39,7 +39,11 @@ jobs:
         uses: nrwl/nx-set-shas@v2
       - uses: actions/setup-node@v2
         with:
+          registry-url: 'https://registry.npmjs.org'
           node-version: '14'
       - run: npm install
       - run: npx nx affected --target=build --parallel --max-parallel=3
       - run: npx nx affected --target=test --parallel --max-parallel=2
+      - run: npx nx affected --target=publish --parallel --max-parallel=2      
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPMTOKEN }}
