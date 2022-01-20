@@ -25,15 +25,17 @@ This command must be created per library. In __libs/my-lib/project.json__ add th
 ```json
     "publish": {
       "executor": "@nrwl/workspace:run-commands",
-      "outputs": ["libs/branding/my-lib"],
+      "outputs": ["publish/libs/my-lib"],
       "options": {
         "command": "npm publish  --access public",
-        "cwd": "libs/buttons"
+        "cwd": "libs/my-lib"
       }
     }
 ```
 
-This enables us to use the `npx nx affected --target=publish` command in our automation script.
+This enables us to use the `npx nx affected --target=publish` command in our automation script. This will automatically publish affected libs to the npm registry.
+
+__NB. Remember to update lib/my-lib/package.json version number if the package has been updated. Otherwise publishing will fail.__
 
 
 
