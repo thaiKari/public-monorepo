@@ -22,6 +22,9 @@ jobs:
       - run: npm install
       - run: npx nx affected --target=build --parallel --max-parallel=3
       - run: npx nx affected --target=test --parallel --max-parallel=2
+      - run: npx nx affected --target=publish --parallel --max-parallel=2      
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPMTOKEN }}
 
   pr:
     runs-on: ubuntu-latest
@@ -40,6 +43,3 @@ jobs:
       - run: npm install
       - run: npx nx affected --target=build --parallel --max-parallel=3
       - run: npx nx affected --target=test --parallel --max-parallel=2
-      - run: npx nx affected --target=publish --parallel --max-parallel=2      
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPMTOKEN }}
