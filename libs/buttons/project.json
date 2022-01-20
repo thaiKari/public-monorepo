@@ -39,6 +39,14 @@
         "passWithNoTests": true
       }
     },
+    "init": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": ["libs/branding/buttons"],
+      "options": {
+        "command": "npm init",
+        "cwd": "libs/buttons"
+      }
+    },
     "publish": {
       "executor": "@nrwl/workspace:run-commands",
       "outputs": ["libs/branding/buttons"],
