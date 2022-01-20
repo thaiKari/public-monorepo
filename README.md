@@ -27,10 +27,7 @@ This command must be created per library. In __libs/my-lib/project.json__ add th
       "executor": "@nrwl/workspace:run-commands",
       "outputs": ["libs/branding/my-lib"],
       "options": {
-        "commands":[
-           "npm --no-git-tag-version version patch",
-           "npm publish  --access public"
-          ],
+        "command": "npm publish  --access public",
         "cwd": "libs/buttons"
       }
     }
