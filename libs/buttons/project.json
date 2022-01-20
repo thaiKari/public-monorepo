@@ -41,10 +41,9 @@
     },
     "publish": {
       "executor": "@nrwl/workspace:run-commands",
-      "outputs": ["libs/branding/my-lib"],
+      "outputs": ["publish/libs/buttons"],
       "options": {
-        "command": "npm publish  --access public",
-        "cwd": "libs/buttons"
+        "command": "npm publish  --access public"
       }
     }
   }
