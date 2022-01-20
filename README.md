@@ -10,7 +10,7 @@ Run `nx g @nrwl/react:app my-app` to generate an application.
 
 ## Generate a library (publishable)
 
-Run `nx g @nrwl/react:lib my-lib --publishable --importPath  @myorg/my-lib` to generate a library.
+Run `nx g @nrwl/react:lib my-lib --publishable --importPath  @kari-nx/my-lib` to generate a library.
 
 Libraries are shareable across libraries and applications. They can be imported from `@kari-nx/mylib`.
 
