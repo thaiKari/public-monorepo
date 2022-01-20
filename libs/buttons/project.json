@@ -38,6 +38,14 @@
         "jestConfig": "libs/buttons/jest.config.js",
         "passWithNoTests": true
       }
+    },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": ["libs/branding/buttons"],
+      "options": {
+        "command": "npm publish ",
+        "cwd": "libs/buttons"
+      }
     }
   }
 }
