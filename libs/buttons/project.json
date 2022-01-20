@@ -43,7 +43,8 @@
       "executor": "@nrwl/workspace:run-commands",
       "outputs": ["publish/libs/buttons"],
       "options": {
-        "command": "npm publish  --access public"
+        "command": "npm publish  --access public",
+        "cwd": "libs/buttons"
       }
     }
   }
