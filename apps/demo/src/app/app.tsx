@@ -1,9 +1,10 @@
-import { PinkButton } from '@kari-nx/buttons';
+import { GreenButton, PinkButton } from '@kari-nx/buttons';
 
 export function App() {
   return (
     <>
       <PinkButton/>
+      <GreenButton/>
       <div />
     </>
   );

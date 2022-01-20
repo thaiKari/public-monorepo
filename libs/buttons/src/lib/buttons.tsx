@@ -10,3 +10,11 @@ export function PinkButton(props: ButtonsProps) {
     </button>
   );
 }
+
+export function GreenButton(props: ButtonsProps) {
+  return (
+    <button style={{backgroundColor:'green'}}>
+      click mee
+    </button>
+  );
+}
